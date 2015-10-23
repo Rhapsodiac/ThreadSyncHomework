@@ -35,7 +35,8 @@ public class ThreadSyncTest{
     }
     
     private static class AddSum implements Runnable{
-        
+        //Lock causes threads to synchronize.
+        //Without lock, threads cause data corruption and sum is not 1000
         private static Lock lock = new ReentrantLock();
         
         @Override
